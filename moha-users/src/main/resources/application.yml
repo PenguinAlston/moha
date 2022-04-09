@@ -1,0 +1,14 @@
+server:
+  port: 9001
+spring:
+  datasource:
+    username: root
+    password: 130510
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1/mantou?characterEncoding=utf-8&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    type: com.zaxxer.hikari.HikariDataSource
+  application:
+    name: moha-users
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
