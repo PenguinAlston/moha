@@ -1,6 +1,6 @@
 package com.moha.users.service;
 
-import com.moha.users.servce.UsersService;
+import com.moha.usersInfo.UsersService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

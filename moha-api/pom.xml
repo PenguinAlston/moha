@@ -15,6 +15,14 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
+    <dependencies>
+        <!--  all entity modle-->
+        <dependency>
+            <groupId>com.alston</groupId>
+            <artifactId>moha-commons</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
 
 </project>

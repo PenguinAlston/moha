@@ -8,6 +8,7 @@
         <module>moha-mbp</module>
         <module>moha-api</module>
         <module>moha-commons</module>
+        <module>moha-books</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

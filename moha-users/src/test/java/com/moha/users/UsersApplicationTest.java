@@ -1,7 +1,7 @@
 package com.moha.users;
 
 
-import com.moha.users.entity.UsersInfo;
+import com.moha.entities.UsersInfo;
 import com.moha.users.mapper.UserMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

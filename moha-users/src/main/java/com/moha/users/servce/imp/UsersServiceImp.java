@@ -1,8 +1,9 @@
 package com.moha.users.servce.imp;
 
-import com.moha.users.entity.UsersInfo;
+import com.moha.entities.UsersInfo;
 import com.moha.users.mapper.UserMapper;
-import com.moha.users.servce.UsersService;
+import com.moha.usersInfo.UsersService;
+import org.apache.dubbo.config.annotation.DubboService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,7 @@ import java.util.List;
  * @Version: 1.0
  **/
 @Service
+@DubboService
 public class UsersServiceImp implements UsersService {
 
     private Logger logger = LoggerFactory.getLogger(UsersServiceImp.class);
