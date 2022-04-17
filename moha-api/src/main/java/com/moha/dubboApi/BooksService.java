@@ -1,11 +1,13 @@
-package com.moha.usersInfo;
+package com.moha.dubboApi;
 
 import com.moha.entities.BooksInfo;
 
 import java.util.List;
 
 public interface BooksService {
-    List<BooksInfo> getAllBooks();
+    BooksInfo getBookByID(String bookID);
+
+    List<BooksInfo> getBooksByBatchID(List<String> bookIDS);
 
     List<BooksInfo> getAllSharedBooks();
 

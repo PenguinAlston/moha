@@ -1,6 +1,6 @@
 package com.moha.users.service;
 
-import com.moha.usersInfo.UsersService;
+import com.moha.dubboApi.UsersService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

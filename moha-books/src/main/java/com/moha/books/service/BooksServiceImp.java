@@ -1,14 +1,15 @@
 package com.moha.books.service;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.moha.books.mapper.BooksMapper;
 import com.moha.entities.BooksInfo;
-import com.moha.usersInfo.BooksService;
+import com.moha.dubboApi.BooksService;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -23,24 +24,51 @@ public class BooksServiceImp implements BooksService {
 
     private static final Logger logger = LoggerFactory.getLogger(BooksServiceImp.class);
 
-    @Autowired
+    @Resource
     private BooksMapper booksMapper;
 
 
     @Override
-    public List<BooksInfo> getAllBooks() {
-        booksMapper.selectList();
-        return null;
+    public BooksInfo getBookByID(String bookID) {
+        BooksInfo booksInfo = booksMapper.selectById(bookID);
+        return booksInfo;
     }
 
+    /**
+     * 根据书籍id获书籍信息
+     * @param bookIDS
+     * @return
+     */
+    @Override
+    public List<BooksInfo> getBooksByBatchID(List<String> bookIDS) {
+        List<BooksInfo> booksInfos = booksMapper.selectBatchIds(bookIDS);
+        return booksInfos;
+    }
+
+    /**
+     *  获取全部已经共享的书籍
+     * isShared:0 表示该书籍已经共享
+     * @return
+     */
     @Override
     public List<BooksInfo> getAllSharedBooks() {
-        return null;
+        QueryWrapper<BooksInfo> sharedBooksWrapper = new QueryWrapper<>();
+        sharedBooksWrapper.eq("isShared",0);
+        List<BooksInfo> booksInfoList = booksMapper.selectList(sharedBooksWrapper);
+        return booksInfoList;
     }
 
+    /**
+     * 获取全部未共享的书籍
+     * isShared:1 未共享
+     * @return
+     */
     @Override
     public List<BooksInfo> getAllNotSharedBooks() {
-        return null;
+        QueryWrapper<BooksInfo> sharedBooksWrapper = new QueryWrapper<>();
+        sharedBooksWrapper.eq("isShared",1);
+        List<BooksInfo> booksInfoList = booksMapper.selectList(sharedBooksWrapper);
+        return booksInfoList;
     }
 
     @Override

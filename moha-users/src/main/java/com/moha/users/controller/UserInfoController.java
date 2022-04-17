@@ -1,7 +1,7 @@
 package com.moha.users.controller;
 
 import com.moha.entities.UsersInfo;
-import com.moha.usersInfo.UsersService;
+import com.moha.dubboApi.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

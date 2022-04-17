@@ -20,7 +20,7 @@ public class BooksInfo {
 
     @TableId
     @TableField("bookid")
-    private String bookID;
+    private String bookid;
 
     @TableField("categoryid")
     private int categoryID;

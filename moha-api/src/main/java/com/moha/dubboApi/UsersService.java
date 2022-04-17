@@ -1,4 +1,4 @@
-package com.moha.usersInfo;
+package com.moha.dubboApi;
 
 import com.moha.entities.UsersInfo;
 
@@ -18,5 +18,7 @@ public interface UsersService {
      * @return
      */
     Integer insert(UsersInfo usersInfo);
+
+    boolean isExistsUserInfo(String userId);
 
 }

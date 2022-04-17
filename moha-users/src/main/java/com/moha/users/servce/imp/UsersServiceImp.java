@@ -1,8 +1,9 @@
 package com.moha.users.servce.imp;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.moha.entities.UsersInfo;
 import com.moha.users.mapper.UserMapper;
-import com.moha.usersInfo.UsersService;
+import com.moha.dubboApi.UsersService;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -37,5 +38,13 @@ public class UsersServiceImp implements UsersService {
     public Integer insert(UsersInfo usersInfo) {
         int result =userMapper.insert(usersInfo);
         return result;
+    }
+
+    @Override
+    public boolean isExistsUserInfo(String userId) {
+        QueryWrapper<UsersInfo> queryWrapper = new QueryWrapper<>();
+        queryWrapper.exists("userId="+userId);
+        boolean b = userMapper.exists(queryWrapper);
+        return b;
     }
 }
