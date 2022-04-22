@@ -5,7 +5,7 @@ import com.moha.entities.User2Books;
 
 /**
  * @ClassName: User2BookMapper
- * @Description: TODO
+ * @Description: table user2book mapper
  * @Author: shao1
  * @Version: 1.0
  **/

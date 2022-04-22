@@ -10,7 +10,7 @@ import java.util.Date;
 
 /**
  * @ClassName: BooksInfo
- * @Description: TODO
+ * @Description: booksinfo entity
  * @Author: shao1
  * @Version: 1.0
  **/

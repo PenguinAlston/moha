@@ -8,7 +8,7 @@ import lombok.Data;
 
 /**
  * @ClassName: User2Books
- * @Description: TODO
+ * @Description: user 2 book entity
  * @Author: shao1
  * @Version: 1.0
  **/

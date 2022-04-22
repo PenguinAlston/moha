@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * @ClassName: CoreApplcation
- * @Description: TODO
+ * @Description: moha kindle books core application
  * @Author: shao1
  * @Version: 1.0
  **/
