@@ -3,7 +3,7 @@ server:
 spring:
   datasource:
     username: root
-    password: 130510
+    password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/mantou?characterEncoding=utf-8&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
     type: com.zaxxer.hikari.HikariDataSource
@@ -12,7 +12,7 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 47.105.177.15:8849
+        server-addr: localhost:8849
   main:
     allow-circular-references: true
     allow-bean-definition-overriding: true
