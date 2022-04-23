@@ -2,8 +2,8 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 47.105.177.15:8849
+        server-addr: localhost:8849
       config:
-        server-addr:  47.105.177.15:8849
+        server-addr:  localhost:8849
   application:
     name: moha-books
