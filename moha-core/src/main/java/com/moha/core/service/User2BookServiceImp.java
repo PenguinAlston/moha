@@ -77,7 +77,6 @@ public class User2BookServiceImp extends ServiceImpl<User2BookMapper,User2Books>
         }
         //添加user2books信息 bookinfo转换为表 user2Books信息
         List<User2Books> u2books=new ArrayList<>();
-       ;
         u2books.add( new User2Books("",""));
         booksInfos.forEach((book)-> u2books.add(new User2Books(userId,book.getBookid())));
 
