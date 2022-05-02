@@ -1,8 +1,10 @@
 package com.moha.users.controller;
 
+import com.moha.common.ResponseVO;
 import com.moha.entities.UsersInfo;
 import com.moha.dubboApi.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,9 +25,12 @@ public class UserInfoController {
     private UsersService usersService;
 
     @GetMapping("/getAll")
-    public List<UsersInfo> getAllUsers(){
-
+    public ResponseVO getAllUsers(){
+        ResponseVO responseVO = new ResponseVO();
         List<UsersInfo> allUsersInfo = usersService.getAllUsersInfo();
-        return allUsersInfo;
+        if(allUsersInfo.size()>0){
+            return responseVO.ok(allUsersInfo);
+        }
+        return responseVO.fail();
     }
 }

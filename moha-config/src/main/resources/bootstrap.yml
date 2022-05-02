@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: moha-config
+  cloud:
+    nacos:
+      config:
+        server-addr: ENC(PDdCRxFcd6crk131dmFQsNZ4JUFj47i8OWKdyABxvTcaLr+zgoDSX2PLJAWu3E51eS0KpZVwumiacBBcJz79kw==)
+        file-extension: yaml
+        namespace: 06b4737d-b539-4601-af96-5fd16b18b2c5
+        username: ENC(1Q1DgJf+1kXabT5O8HYhFCb+rsrvB1tkWR1QzXoHGXSmKIbrZQ5qcyl2SbBhG3wU)
+        password: ENC(jpY6aU38bOobYZPOX5Hl2RGl0buxv1FLcox7e3LFcJVwd38OP1eddYk3yFGSmKJh)
+      discovery:
+        server-addr: ENC(PDdCRxFcd6crk131dmFQsNZ4JUFj47i8OWKdyABxvTcaLr+zgoDSX2PLJAWu3E51eS0KpZVwumiacBBcJz79kw==)
+        namespace: 06b4737d-b539-4601-af96-5fd16b18b2c5
+        username: ENC(1Q1DgJf+1kXabT5O8HYhFCb+rsrvB1tkWR1QzXoHGXSmKIbrZQ5qcyl2SbBhG3wU)
+        password: ENC(jpY6aU38bOobYZPOX5Hl2RGl0buxv1FLcox7e3LFcJVwd38OP1eddYk3yFGSmKJh)
+  profiles:
+    active: test
+server:
+  port: 8099
+jasypt:
+  encryptor:
+    password: HanXu

@@ -10,7 +10,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @ClassName: UsersServiceImp
@@ -47,4 +49,28 @@ public class UsersServiceImp implements UsersService {
         boolean b = userMapper.exists(queryWrapper);
         return b;
     }
+
+    @Override
+    public UsersInfo getOneUsuerInfo(String userName, String pwd) {
+        //从redis中获取信息 若有返回登录成功  否则 去数据库查询 查询后插入redis中 返回查询结果
+        Map<String ,String > userInfoMap= new HashMap<>();
+        userInfoMap.put("username",userName);
+        userInfoMap.put("password",pwd);
+        QueryWrapper<UsersInfo> usersInfoQueryWrapper =  new QueryWrapper<>();
+        usersInfoQueryWrapper.allEq(userInfoMap);
+        UsersInfo usersInfo = userMapper.selectOne(usersInfoQueryWrapper);
+        return usersInfo;
+    }
+
+    @Override
+    public UsersInfo getOneUserInf(UsersInfo u) {
+        logger.info("【根据对象获取用户信息】用户名为：{}，手机号：{}，密码为：{}",u.getUserName(),u.getPhone(),u.getPhone());
+        QueryWrapper<UsersInfo> usersInfoQueryWrapper =  new QueryWrapper<>();
+        usersInfoQueryWrapper.eq("username",u.getUserName()).eq("password",u.getPassWord()).eq("phone",u.getPhone()).eq("kindleEmail",u.getKindleEmail());
+        UsersInfo usersInfo = userMapper.selectOne(usersInfoQueryWrapper);
+        logger.info("查询完成，返回查询结果对象");
+        return usersInfo;
+    }
+
+
 }

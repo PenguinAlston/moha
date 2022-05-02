@@ -21,4 +21,8 @@ public interface UsersService {
 
     boolean isExistsUserInfo(String userId);
 
+    UsersInfo getOneUsuerInfo(String userName,String pwd);
+
+    UsersInfo getOneUserInf(UsersInfo u);
+
 }

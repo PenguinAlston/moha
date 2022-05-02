@@ -6,6 +6,8 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
  * @ClassName: User2Books
  * @Description: user 2 book entity
@@ -14,7 +16,7 @@ import lombok.Data;
  **/
 @Data
 @TableName("bs_user2book")
-public class User2Books {
+public class User2Books implements Serializable {
 
     @TableId(type=IdType.ASSIGN_UUID)
     private String idno;

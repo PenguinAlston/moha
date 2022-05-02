@@ -21,7 +21,7 @@ mybatis-plus:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 dubbo:
   scan:
-    base-packages: com.moha.users.servce
+    base-packages: com.moha.books.service
   protocol:
     name: dubbo
     port: -1
