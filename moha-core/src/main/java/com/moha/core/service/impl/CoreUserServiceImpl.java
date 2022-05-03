@@ -1,6 +1,6 @@
 package com.moha.core.service.impl;
 
-import com.moha.core.service.CoreUsersServce;
+import com.moha.dubboApi.CoreUsersServce;
 import com.moha.dubboApi.UsersService;
 import com.moha.entities.UsersInfo;
 import org.apache.dubbo.config.annotation.DubboReference;

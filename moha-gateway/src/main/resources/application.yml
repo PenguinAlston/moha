@@ -1,0 +1,20 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: moha-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ENC(PDdCRxFcd6crk131dmFQsNZ4JUFj47i8OWKdyABxvTcaLr+zgoDSX2PLJAWu3E51eS0KpZVwumiacBBcJz79kw==)
+        username: ENC(1Q1DgJf+1kXabT5O8HYhFCb+rsrvB1tkWR1QzXoHGXSmKIbrZQ5qcyl2SbBhG3wU)
+        password: ENC(jpY6aU38bOobYZPOX5Hl2RGl0buxv1FLcox7e3LFcJVwd38OP1eddYk3yFGSmKJh)
+        namespace: 06b4737d-b539-4601-af96-5fd16b18b2c5
+    gateway:
+      routes:
+        - id: moha-core
+          uri: lb://moha-core  #lb:// 使用loadbalance负载均衡
+          predicates:  #断言
+           - Path=/core/**
+  profiles:
+    active: dev

@@ -1,18 +1,23 @@
 server:
   port: 9002
 spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ENC(PDdCRxFcd6crk131dmFQsNZ4JUFj47i8OWKdyABxvTcaLr+zgoDSX2PLJAWu3E51eS0KpZVwumiacBBcJz79kw==)
+        username: ENC(1Q1DgJf+1kXabT5O8HYhFCb+rsrvB1tkWR1QzXoHGXSmKIbrZQ5qcyl2SbBhG3wU)
+        password: ENC(jpY6aU38bOobYZPOX5Hl2RGl0buxv1FLcox7e3LFcJVwd38OP1eddYk3yFGSmKJh)
+        namespace: 06b4737d-b539-4601-af96-5fd16b18b2c5
+      config:
+        enabled: false
   datasource:
-    username: root
-    password: root
+    username: ENC(3GlkxTRB+AwsEywmc8IcW4+ylSu5V+lAbdzn/1yWYcIl8FrTz1/MWJA1aXPinVM9)
+    password: ENC(fws5QWXSkgHuMk+lQkbEzWv5Eb37QY7TrGAgDynCGuFo25MjbT1SeC3zBDzvge4n)
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/mantou?characterEncoding=utf-8&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
     type: com.zaxxer.hikari.HikariDataSource
   application:
     name: moha-books
-  cloud:
-    nacos:
-      discovery:
-        server-addr: localhost:8849
   main:
     allow-circular-references: true
     allow-bean-definition-overriding: true

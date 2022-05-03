@@ -11,6 +11,7 @@
         <module>moha-books</module>
         <module>moha-core</module>
         <module>moha-config</module>
+        <module>moha-gateway</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

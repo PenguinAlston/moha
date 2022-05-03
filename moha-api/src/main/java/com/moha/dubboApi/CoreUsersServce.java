@@ -1,4 +1,4 @@
-package com.moha.core.service;
+package com.moha.dubboApi;
 
 import com.moha.entities.UsersInfo;
 

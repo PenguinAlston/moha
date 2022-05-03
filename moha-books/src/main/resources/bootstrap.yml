@@ -1,9 +1,0 @@
-spring:
-  cloud:
-    nacos:
-      discovery:
-        server-addr: localhost:8849
-      config:
-        server-addr:  localhost:8849
-  application:
-    name: moha-books

@@ -1,17 +1,13 @@
 package com.moha.core.controller;
 
 import com.moha.common.ResponseVO;
-import com.moha.core.service.CoreUsersServce;
-import com.moha.core.service.impl.CoreUserServiceImpl;
 import com.moha.dto.UserInfoDTO;
+import com.moha.dubboApi.CoreUsersServce;
 import com.moha.entities.UsersInfo;
-import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
-
-import javax.websocket.server.PathParam;
 
 /**
  * @ClassName: CoreApplication
@@ -21,7 +17,7 @@ import javax.websocket.server.PathParam;
  **/
 @RestController
 @RequestMapping("/core")
-public class CoreController {
+public class CoreUserController {
 
     @Autowired
     private CoreUsersServce coreUsersServce;
@@ -51,8 +47,9 @@ public class CoreController {
         BeanUtils.copyProperties(userInfoDTO,info);
 
         UsersInfo usersInfo = coreUsersServce.register(info);
+        UserInfoDTO dto = new UserInfoDTO();
+        BeanUtils.copyProperties(usersInfo,dto);
 
-
-        return null;
+        return new ResponseVO().ok(dto);
     }
 }

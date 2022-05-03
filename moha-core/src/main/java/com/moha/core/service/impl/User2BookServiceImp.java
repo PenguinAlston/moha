@@ -1,4 +1,4 @@
-package com.moha.core.service;
+package com.moha.core.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -11,12 +11,10 @@ import com.moha.entities.User2Books;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -79,10 +77,6 @@ public class User2BookServiceImp extends ServiceImpl<User2BookMapper,User2Books>
         List<User2Books> u2books=new ArrayList<>();
         u2books.add( new User2Books("",""));
         booksInfos.forEach((book)-> u2books.add(new User2Books(userId,book.getBookid())));
-
-
-
-
 
         return 0;
     }
