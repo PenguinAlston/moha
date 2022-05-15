@@ -1,0 +1,33 @@
+server:
+  port: 9011
+spring:
+  application:
+    name: moha-oos
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ENC(PDdCRxFcd6crk131dmFQsNZ4JUFj47i8OWKdyABxvTcaLr+zgoDSX2PLJAWu3E51eS0KpZVwumiacBBcJz79kw==)
+        username: ENC(1Q1DgJf+1kXabT5O8HYhFCb+rsrvB1tkWR1QzXoHGXSmKIbrZQ5qcyl2SbBhG3wU)
+        password: ENC(jpY6aU38bOobYZPOX5Hl2RGl0buxv1FLcox7e3LFcJVwd38OP1eddYk3yFGSmKJh)
+        namespace: 06b4737d-b539-4601-af96-5fd16b18b2c5
+  main:
+    allow-bean-definition-overriding: true
+    allow-circular-references: true
+dubbo:
+  scan:
+    base-packages: com.moha.oos.service
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    address: spring-cloud://localhost
+#endpoint测试使用外网 后续调整通过过使用内网体质
+aliyun:
+  oos:
+    endpoint: https://oss-cn-hangzhou.aliyuncs.com
+    #endpoint: oss-cn-hangzhou-internal.aliyuncs.com  内网esc访问oos免流量费用
+    bucketname: moha-fast-kindle
+    accessKey:  ENC(SV537Rq10/Ksc+lmqbPk4zEfUCTPAXMdYaK3PCsy6dMG+UMTBBrKZtF1ApyPGhTw8C4loVBrAptdL8d5LCW/1Q==)
+    accessSecreat: ENC(wJmm6VAzxhfpP9y8kO4YXT9p5eQMqRbszPEwZLdrTInKswLRFTp7bkdD+lNxOmr6SCgge9hIntZ+TScxXcH4PQ==)
