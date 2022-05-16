@@ -12,6 +12,7 @@
         <module>moha-core</module>
         <module>moha-config</module>
         <module>moha-gateway</module>
+        <module>moha-oos</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
