@@ -20,4 +20,4 @@ server:
   port: 8099
 jasypt:
   encryptor:
-    password: HanXu
+    password: ****
